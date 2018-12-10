@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    tools:context="com.bafighter.titaniumlabs.bafighter.FightActivity">
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <View
+        android:id="@+id/left_view"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@drawable/circle_shape"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@id/right_view"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <View
+        android:id="@+id/right_view"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@drawable/circle_shape"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/left_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/character_health"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100 HP"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toTopOf="@id/character"
+        app:layout_constraintStart_toStartOf="@id/character"
+        app:layout_constraintEnd_toEndOf="@id/character"/>
+
+    <TextView
+        android:id="@+id/enemy_health"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100 HP"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toTopOf="@id/enemy"
+        app:layout_constraintStart_toStartOf="@id/enemy"
+        app:layout_constraintEnd_toEndOf="@id/enemy"/>
+
+    <ImageView
+        android:id="@+id/character"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/android"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/enemy"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/android"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/block_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/character"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <RadioButton
+            android:id="@+id/block_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Block head"/>
+        <RadioButton
+            android:id="@+id/block_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Block body"/>
+        <RadioButton
+            android:id="@+id/block_feet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Block feet"/>
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/hit_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/enemy"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <RadioButton
+            android:id="@+id/hit_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hit head"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"
+            app:layout_constraintEnd_toStartOf="@id/enemy"
+            />
+        <RadioButton
+            android:id="@+id/hit_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Hit body"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"/>
+        <RadioButton
+            android:id="@+id/hit_feet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hit feet"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/hit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hit"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>
